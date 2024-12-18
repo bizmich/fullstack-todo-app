@@ -5,7 +5,8 @@ export const index = (request: Request, response: Response) => {
 };
 
 export const store = (request: Request, response: Response) => {
-  response.json('create new task');
+  console.log('req', request.body);
+  response.json(request.body);
 };
 
 export const update = (request: Request, response: Response) => {
