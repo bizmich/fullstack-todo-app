@@ -1,11 +1,11 @@
 {
-  "id": "01178618-ca62-4b7f-81a6-191e5459d21a",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "b1323f20-ba69-4fa3-aab1-768ec07d323a",
+  "prevId": "2ffa6c0d-00fc-4ea1-b95f-6248d35786b8",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.todo": {
-      "name": "todo",
+    "public.tasks": {
+      "name": "tasks",
       "schema": "",
       "columns": {
         "id": {
@@ -15,7 +15,7 @@
           "notNull": true,
           "identity": {
             "type": "always",
-            "name": "todo_id_seq",
+            "name": "tasks_id_seq",
             "schema": "public",
             "increment": "1",
             "startWith": "1",
@@ -50,6 +50,12 @@
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
+        },
+        "priority": {
+          "name": "priority",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
         }
       },
       "indexes": {},
