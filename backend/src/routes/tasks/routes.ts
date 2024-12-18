@@ -1,34 +1,12 @@
-import { Router } from "express";
+import { Router } from 'express';
+import { destroy, index, show, store, update } from './controller';
 
 const TaskRouter = Router();
 
-// index
-TaskRouter.get('/', (req, res) => {
-   res.json('Get all tasks')
-})
+TaskRouter.get('/', index);
+TaskRouter.post('/', store);
+TaskRouter.put('/:id', update);
+TaskRouter.get('/:id', show);
+TaskRouter.delete('/:id', destroy);
 
-//store
-TaskRouter.post('/', (req, res) => {
-   res.json('create new task')
-})
-
-//store
-TaskRouter.post('/', (req, res) => {
-   res.json('create new task')
-})
-
-// update
-TaskRouter.put('/:id', (req, res) => {
-   res.json('update new task')
-})
-
-// show
-TaskRouter.put('/:id', (req, res) => {
-   res.json('show task')
-})
-
-// delete
-TaskRouter.delete('/:id', (req, res) => {
-   res.json('delete task')
-});
 export default TaskRouter;
